@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/booking', 'BookingController@index');
+
+Route::get('/booking/show/{id}', 'BookingController@show');
+
+Route::post('/booking/update', 'BookingController@store');
+
+Route::delete('/booking/delete/{id}', function ($id) {
+    return view('welcome');
+});
+

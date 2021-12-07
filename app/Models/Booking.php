@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 
-class Booking extends Model
+class Booking extends Model implements Authenticatable
 {
-    use HasFactory;
+    use HasFactory, AuthenticableTrait;
     protected $guarded = [];
 }
